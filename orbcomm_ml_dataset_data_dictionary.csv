@@ -1,0 +1,30 @@
+column_name,data_type,description
+window_idx,integer,Index of time window in the IQ recording
+t_start_sec,float,Start time of window in seconds
+window_stride,integer,Window subsampling factor used during dataset generation
+channel,categorical,"ORBCOMM channel ID (S-1, …, S-12, Gateway)"
+filter_type,categorical,"Filter applied (Butterworth, Chebyshev1, Bessel)"
+fc_mhz,float,Channel center frequency from ORBCOMM Appendix D
+bw_khz,float,Channel bandwidth (25 or 50 kHz)
+f_offset_hz,float,Baseband frequency offset relative to 137.5 MHz reference
+fpass1_hz,float,Lower passband edge
+fpass2_hz,float,Upper passband edge
+raw_inband_power_direct,float,Direct signal power before filtering
+raw_inband_power_reflected,float,Reflected signal power before filtering
+inband_power_direct,float,Direct signal power after filtering
+inband_power_reflected,float,Reflected signal power after filtering
+noise_floor_direct,float,Median spectral noise outside ORBCOMM band (direct)
+noise_floor_reflected,float,Median spectral noise outside ORBCOMM band (reflected)
+leakage_power_direct,float,Stopband leakage after filtering (direct)
+leakage_power_reflected,float,Stopband leakage after filtering (reflected)
+interference_metric,float,Ratio of peak to median spectral magnitude within band
+coherence,float,Normalized cross-correlation magnitude
+peak_metric,float,Peak correlation energy metric
+psr_proxy,float,Peak-to-sidelobe ratio estimate
+delay_sec,float,Estimated propagation delay
+delay_stability_sec,float,Change in delay between consecutive windows
+filter_order,integer,Nominal filter order used during dataset generation
+transition_hz,float,Transition bandwidth used (Hz)
+y_reg_psr,float,Regression target equal to PSR proxy
+y_cls_reliable,integer,Binary reliability label derived from PSR threshold
+reliability_threshold_psr_proxy_q75,float,PSR threshold used (75th percentile)
